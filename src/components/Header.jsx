@@ -1,14 +1,6 @@
 //import { Fragment } from "react"
 
-import { useMemo } from "react"
-
-export default function Header({ cart, removeFromCart, increaseQuantity, decreaseQuantity,cleanCart }) {
-
-    // State Derivado
-    const isEmpty = useMemo(() => cart.length === 0, [cart])
-    const carTotal = useMemo(() => cart.reduce((total, item) => total + (item.quantity * item.price), 0), [cart])
-
-    const total = 100
+export default function Header({ cart, removeFromCart, increaseQuantity, decreaseQuantity, cleanCart, isEmpty, carTotal }) {
 
     return (
         <header className="py-5 header">
@@ -87,9 +79,9 @@ export default function Header({ cart, removeFromCart, increaseQuantity, decreas
                                 )}
 
 
-                                <button 
-                                className="btn btn-dark w-100 mt-3 p-2"
-                                onClick={cleanCart}
+                                <button
+                                    className="btn btn-dark w-100 mt-3 p-2"
+                                    onClick={cleanCart}
                                 >Vaciar Carrito</button>
                             </div>
                         </div>

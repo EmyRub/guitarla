@@ -13,6 +13,7 @@ export const useCart = () => {
 
     const [data] = useState(db)
     const [cart, setCart] = useState(initialCart)
+
     const MIN_ITEMS = 1
     const MAX_ITEMS = 5
 
@@ -30,9 +31,7 @@ export const useCart = () => {
         } else {
             item.quantity = 1
             setCart([...cart, item])
-        }
-
-        saveLocalStorage()
+        }       
     }
 
     function removeFromCart(id) {
